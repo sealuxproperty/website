@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find by Lifestyle — SeaLux Property</title>
+  <meta name="description"
+    content="Discover your ideal SEA property based on your lifestyle. Beach life, city living, retirement, investment — find the development that fits your vision.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<div class="currency-bar">
+    <div class="currency-bar-inner">
+      <span>Currency:</span>
+      <button class="currency-btn" data-currency="USD">USD</button>
+      <button class="currency-btn" data-currency="GBP">GBP</button>
+      <button class="currency-btn" data-currency="EUR">EUR</button>
+      <button class="currency-btn" data-currency="AUD">AUD</button>
+      <button class="currency-btn" data-currency="SGD">SGD</button>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Sea<span>Lux</span> Property</a>
+      <div class="nav-links">
+        <a href="developments.html">Developments</a>
+        <a href="find.html" class="active">Find my property</a>
+        <a href="why-sea.html">Why SEA</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="find.html">Find my property</a> &nbsp;/&nbsp; Lifestyle
+    </div>
+  </div>
+
+  <div class="page-hero" id="lifeStyle">
+    <div class="page-hero-inner">
+      <span class="eyebrow">Find by lifestyle</span>
+      <h1>What does your life<br>in SEA look like?</h1>
+      <p>Choose what makes you happy and we'll show you the developments that match your vision.</p>
+    </div>
+  </div>
+
+  <!-- Persona pills -->
+  <div class="persona-bar">
+    <div class="persona-inner">
+      <button class="pill active" data-lifestyle="">✦ All</button>
+      <button class="pill" data-lifestyle="beach">🌴 Beach &amp; island life</button>
+      <button class="pill" data-lifestyle="city">🏙️ City &amp; urban energy</button>
+      <button class="pill" data-lifestyle="investment">📈 Investment &amp; yield</button>
+      <button class="pill" data-lifestyle="retirement">🌞 Retirement &amp; long stay</button>
+      <button class="pill" data-lifestyle="family">👨‍👩‍👧 Family &amp; relocation</button>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <label>Country:</label>
+      <select id="f-country" onchange="initLifestyleFilters()">
+        <option value="">All</option>
+        <option value="thailand">Thailand only</option>
+        <option value="philippines">Philippines only</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="results-list" id="results">
+
+      <div class="dev-card" data-country="philippines" data-lifestyle="city,investment,family">
+
+        <div class="dev-img"><img src="images/Haraya/Building1.png" alt="Haraya Residences"></div>
+
+        <div class="dev-body">
+
+          <span class="card-tag tag-ph">Philippines · Pasig</span>
+
+          <h2>Haraya Residences</h2>
+
+          <p class="persona-match">
+            Perfect for:
+            <strong>Luxury Buyer · Family Relocator · Capital Growth Investor</strong>
+          </p>
+
+          <p>
+            A vertical gated village by Shang Properties in Bridgetowne Estate. Haraya combines luxury residences,
+            resort-inspired amenities and exceptional connectivity to Ortigas, Eastwood and Bonifacio Global City.
+          </p>
+
+          <div class="tags">
+            <span class="tag">🏙️ Bridgetowne Estate</span>
+            <span class="tag">🏊 Resort amenities</span>
+            <span class="tag">👨‍👩‍👧 Family focused</span>
+            <span class="tag">📈 Capital growth</span>
+          </div>
+
+          <div class="dev-footer">
+            <p class="price">
+              From <strong data-usd="424000">$424k</strong>
+            </p>
+
+            <a href="haraya.html" class="btn btn-gold">
+              View development
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="dev-card" data-country="philippines" data-lifestyle="city,investment,family">
+        <div class="dev-img"><img src="images/ShangSummit/Building2.png" alt="Shang-Summit-Quezon"></div>
+        <div class="dev-body">
+          <span class="card-tag tag-ph">Philippines · Manila / BGC</span>
+          <h2> Shang-Summit-Quezon</h2>
+          <p class="persona-match">Perfect for: <strong>Urban Visionary · Growth Seeker · Family Relocator</strong></p>
+          <p>BGC is the new Manila — walkable, international, and buzzing with energy. Live above the city with bay
+            views, co-working space in the building and the best restaurants and international schools on your doorstep.
+          </p>
+          <div class="tags">
+            <span class="tag">🏫 International schools</span>
+            <span class="tag">🛍️ Mall access</span>
+            <span class="tag">💼 Business district</span>
+            <span class="tag">🌅 Bay views</span>
+          </div>
+          <div class="dev-footer">
+            <p class="price">From <strong data-usd="85000">$85k</strong></p>
+            <a href="Shang-Summit-Quezon.html" class="btn btn-gold">View development</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-card" data-country="philippines" data-lifestyle="city,investment,family">
+
+        <div class="dev-img"><img src="images/Laya/Building1.png" alt="Laya by Shang Properties"></div>
+
+        <div class="dev-body">
+
+          <span class="card-tag tag-ph">Philippines · Pasig City</span>
+
+          <h2>Laya by Shang Properties</h2>
+
+          <p class="persona-match">
+            Perfect for:
+            <strong>Urban Professional · First-Time Investor · Growing Family</strong>
+          </p>
+
+          <p>
+            Designed for creators, professionals and families, Laya offers over 2,900 sqm of lifestyle amenities in one
+            of Metro Manila's most connected locations.
+          </p>
+
+          <div class="tags">
+            <span class="tag">💼 Co-working spaces</span>
+            <span class="tag">🏊 Lifestyle amenities</span>
+            <span class="tag">🚆 Connected location</span>
+            <span class="tag">👨‍👩‍👧 Family living</span>
+          </div>
+
+          <div class="dev-footer">
+            <p class="price">
+              From <strong data-usd="140000">$140k</strong>
+            </p>
+
+            <a href="Laya-Shang-Pasig.html" class="btn btn-gold">
+              View development
+            </a>
+          </div>
+
+        </div>
+      </div>
+<div class="dev-card" data-country="thailand" data-lifestyle="beach,investment,retirement,family">
+
+  <div class="dev-img"><img src="images/Blueroc/Building2.png" alt="Bluroc Hua Hin"></div>
+
+  <div class="dev-body">
+
+    <span class="card-tag tag-thailand">Thailand · Hua Hin</span>
+
+    <h2>Bluroc Hua Hin</h2>
+
+    <p class="persona-match">
+      Perfect for:
+      <strong>Beach Lifestyle Seeker · Value Investor · Retirement Planner</strong>
+    </p>
+
+    <p>
+      Moroccan-inspired condos in the heart of Hua Hin City, minutes from the beach, with two swimming pools, a fitness centre and tropical gardens — an affordable entry point into Thai coastal living.
+    </p>
+
+    <div class="tags">
+      <span class="tag">🏖️ Near Hua Hin beaches</span>
+      <span class="tag">🏊 Two pools</span>
+      <span class="tag">💪 Fitness centre</span>
+      <span class="tag">👨‍👩‍👧 Family rooms</span>
+    </div>
+
+    <div class="dev-footer">
+      <p class="price">From <strong data-usd="46550">$46.6k</strong></p>
+      <a href="bluroc-hua-hin.html" class="btn btn-gold">View development</a>
+    </div>
+
+  </div>
+</div>
+
+      <div class="dev-card" data-country="philippines" data-lifestyle="city,investment,family,retirement">
+
+        <div class="dev-img"><img src="images/Bauhinia/Building1.png" alt="Shang Bauhinia Residences"></div>
+
+        <div class="dev-body">
+
+          <span class="card-tag tag-ph">Philippines · Cebu</span>
+
+          <h2>Shang Bauhinia Residences</h2>
+
+          <p class="persona-match">
+            Perfect for:
+            <strong>Retirement Planner · Lifestyle Investor · Luxury Buyer</strong>
+          </p>
+
+          <p>
+            Ultra-luxury residences overlooking Cebu Country Club. Combining hotel-grade amenities with one of Cebu's
+            most prestigious addresses beside Cebu IT Park.
+          </p>
+
+          <div class="tags">
+            <span class="tag">⛳ Cebu Country Club</span>
+            <span class="tag">🌴 Cebu lifestyle</span>
+            <span class="tag">🏊 Hotel-grade amenities</span>
+            <span class="tag">🌞 Retirement appeal</span>
+          </div>
+
+          <div class="dev-footer">
+            <p class="price">
+              From <strong data-usd="190000">$190k</strong>
+            </p>
+
+            <a href="bauhinia.html" class="btn btn-gold">
+              View development
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <p class="no-results" id="no-results">No developments match your selection. <a href="lifestyle.html">Clear filters</a>
+  </p>
+  </div>
+
+  <div class="other-paths">
+    <div class="other-paths-inner">
+      <h3>Try a different approach</h3>
+      <p>Every path leads to the same four developments — just from a different angle.</p>
+      <div class="path-btns">
+        <a href="search.html" class="btn">Search by requirements</a>
+        <a href="budget.html" class="btn">Browse by budget</a>
+        <a href="developments.html" class="btn">View all developments</a>
+      </div>
+    </div>
+  </div>
+
+   <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>SeaLux Property</h4>
+        <p>Connecting buyers with exceptional developments across South East Asia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Developments</h4>
+        <!-- ✏️ Add a link for each development page -->
+        <a href="developments.html">All developments</a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="find.html">Find my property</a>
+        <a href="why-sea.html">Why SEA</a>
+        <a href="guides/index.html">Buyer guides</a>
+        <a href="about.html">About us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Countries</h4>
+        <a href="thailand.html">Thailand</a>
+        <a href="philippines.html">Philippines</a>
+        <a href="malaysia.html">Malaysia</a>
+        <a href="Singapore.html">Singapore</a>
+        <a href="vietnam.html">Vietnam</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 SeaLux Property. All developments are off-plan. Prices indicative and subject to change.
+    </div>
+  </footer>
+
+
+  <button class="float-btn" id="float-btn" aria-label="Contact us">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.5"
+        stroke-linejoin="round" />
+    </svg>
+  </button>
+
+  
+ <!-- Floating contact form -->
+<div class="float-form-wrap" id="float-form-wrap">
+  <div class="float-form">
+    <div class="float-form-header">
+      <h4>Get in touch</h4>
+      <button class="float-form-close" id="float-form-close" aria-label="Close">✕</button>
+    </div>
+    <div class="enquiry-form-block">
+
+              <form class="enquiry-form"> <input type="text" name="website" style="position:absolute; left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Email address">
+        <input type="tel" name="phone" placeholder="Phone / WhatsApp" pattern="[0-9+\s\-()]{7,}">
+
+        <select name="property" class="property-select">
+          <!-- populated automatically by populatePropertySelects() in main.js -->
+        </select>
+
+        <textarea name="message" placeholder="Your message"></textarea>
+
+        <p class="form-error form-error--missing" style="display:none">Please provide either an email address or phone number.</p>
+        <p class="form-error form-error--phone" style="display:none">Please enter a valid phone number.</p>
+
+        <button type="submit" class="btn btn-gold enquiry-submit">Send enquiry</button>
+
+        <p class="form-note">We'll get back to you within 24 hours.</p>
+
+      </form>
+
+      <p class="form-success" style="display:none">Thank you — we'll be in touch shortly.</p>
+
+    </div>
+  </div>
+</div>
+  <script src="main.js"></script>
+</body>
+
+</html>

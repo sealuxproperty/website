@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✏️ SEO: Update title and description for each page -->
+  <title>SeaLux Property — Luxury Residences in Thailand, Philippines, Malaysia and Singapore</title>
+  <meta name="description" content="Discover exceptional off-plan residences across South East Asia. Investment properties and lifestyle homes in Thailand and the Philippines.">
+
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <!-- ════════════════════════════════
+       CURRENCY BAR — repeat on every page, path prefix changes
+       Root pages:       href="style.css"  /  src="main.js"
+       /developments/*:  href="style.css" / src="main.js"
+       /paths/*:         href="style.css" / src="main.js"
+       /guides/*:        href="style.css" / src="main.js"
+  ════════════════════════════════ -->
+  <div class="currency-bar">
+    <div class="currency-bar-inner">
+      <span>Currency:</span>
+      <button class="currency-btn" data-currency="USD">USD</button>
+      <button class="currency-btn" data-currency="GBP">GBP</button>
+      <button class="currency-btn" data-currency="EUR">EUR</button>
+      <button class="currency-btn" data-currency="AUD">AUD</button>
+      <button class="currency-btn" data-currency="SGD">SGD</button>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       NAV — same on every page
+  ════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">SEA<span>LUX</span> Property</a>
+    <div class="nav-links">
+      <a href="developments.html">Developments</a>
+      <a href="find.html" class="active">Find my property</a>
+      <a href="why-sea.html">Why SEA</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="developments.html">Developments</a>
+  <a href="find.html">Find my property</a>
+  <a href="why-sea.html">Why SEA</a>
+  <a href="guides.html">Guides</a>
+  <a href="about.html">About</a>
+</div>
+
+
+  
+
+  
+
+<div class="page-hero" style="background-image:url('images/general20.png');">
+    <div class="page-hero-inner">
+      
+      <span class="eyebrow">Find your property</span>
+      <h1 class="page-title">How are you<br>thinking about this?</h1>
+      <p class="page-sub">Explore homes your way — tailored to you.</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="section section--sand">
+    <div class="container">
+      <div class="quiz-wrap">
+        <h2 class="quiz-question">Three easy ways to search for your new home...</h2>
+        <div class="quiz-options">
+          <a href="lifestyle.html" class="quiz-option"><h3>Your lifestyle ></h3> </a>
+          <a href="search.html" class="quiz-option"><h3>Residence features ></h3></a>
+          <a href="budget.html" class="quiz-option"><h3>Budget ></h3> </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>SeaLux Property</h4>
+        <p>Connecting buyers with exceptional developments across South East Asia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Developments</h4>
+        <!-- ✏️ Add a link for each development page -->
+        <a href="developments.html">All developments</a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="find.html">Find my property</a>
+        <a href="why-sea.html">Why SEA</a>
+        <a href="guides/index.html">Buyer guides</a>
+        <a href="about.html">About us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Countries</h4>
+        <a href="thailand.html">Thailand</a>
+        <a href="philippines.html">Philippines</a>
+        <a href="malaysia.html">Malaysia</a>
+        <a href="Singapore.html">Singapore</a>
+        <a href="vietnam.html">Vietnam</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 SeaLux Property. All developments are off-plan. Prices indicative and subject to change.
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('.cbtn').forEach(b =>
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.cbtn').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        // Currency conversion runs on path pages where prices are shown
+        localStorage.setItem('slp-currency', b.dataset.c);
+      })
+    );
+    // Restore saved currency preference
+    const saved = localStorage.getItem('slp-currency');
+    if (saved) {
+      document.querySelectorAll('.cbtn').forEach(b => b.classList.toggle('active', b.dataset.c === saved));
+    }
+  </script>
+  <!-- Floating contact button -->
+<button class="float-btn" id="float-btn" aria-label="Contact us">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<!-- Floating contact form -->
+<<!-- Floating contact form -->
+<div class="float-form-wrap" id="float-form-wrap">
+  <div class="float-form">
+    <div class="float-form-header">
+      <h4>Get in touch</h4>
+      <button class="float-form-close" id="float-form-close" aria-label="Close">✕</button>
+    </div>
+    <div class="enquiry-form-block">
+
+              <form class="enquiry-form"> <input type="text" name="website" style="position:absolute; left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Email address">
+        <input type="tel" name="phone" placeholder="Phone / WhatsApp" pattern="[0-9+\s\-()]{7,}">
+
+        <select name="property" class="property-select">
+          <!-- populated automatically by populatePropertySelects() in main.js -->
+        </select>
+
+        <textarea name="message" placeholder="Your message"></textarea>
+
+        <p class="form-error form-error--missing" style="display:none">Please provide either an email address or phone number.</p>
+        <p class="form-error form-error--phone" style="display:none">Please enter a valid phone number.</p>
+
+        <button type="submit" class="btn btn-gold enquiry-submit">Send enquiry</button>
+
+        <p class="form-note">We'll get back to you within 24 hours.</p>
+
+      </form>
+
+      <p class="form-success" style="display:none">Thank you — we'll be in touch shortly.</p>
+
+    </div>
+  </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

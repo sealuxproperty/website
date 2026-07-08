@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✏️ SEO: Update title and description for each page -->
+  <title>SeaLux Property — Luxury Residences in Thailand, Philippines, Malaysia and Singapore</title>
+  <meta name="description"
+    content="Discover exceptional off-plan residences across South East Asia. Investment properties and lifestyle homes in Thailand and the Philippines.">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════
+       CURRENCY BAR — repeat on every page, path prefix changes
+       Root pages:       href="style.css"  /  src="main.js"
+       /developments/*:  href="style.css" / src="main.js"
+       /paths/*:         href="style.css" / src="main.js"
+       /guides/*:        href="style.css" / src="main.js"
+  ════════════════════════════════ -->
+  <div class="currency-bar">
+    <div class="currency-bar-inner">
+      <span>Currency:</span>
+      <button class="currency-btn" data-currency="USD">USD</button>
+      <button class="currency-btn" data-currency="GBP">GBP</button>
+      <button class="currency-btn" data-currency="EUR">EUR</button>
+      <button class="currency-btn" data-currency="AUD">AUD</button>
+      <button class="currency-btn" data-currency="SGD">SGD</button>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       NAV — same on every page
+  ════════════════════════════════ -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SEA<span>LUX</span> Property</a>
+      <div class="nav-links">
+        <a href="developments.html">Developments</a>
+        <a href="find.html" class="active">Find my property</a>
+        <a href="why-sea.html">Why SEA</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="developments.html">Developments</a>
+    <a href="find.html">Find my property</a>
+    <a href="why-sea.html">Why SEA</a>
+    <a href="guides.html">Guides</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="find.html">Find my property</a> &nbsp;/&nbsp; Search
+    </div>
+  </div>
+
+  <div class="page-hero" id="search">
+    <div class="page-hero-inner">
+      <span class="eyebrow">Search by requirements</span>
+      <h1>I know what I want</h1>
+      <p>Filter by country, unit type, setting and amenity. We'll show you exactly what fits.</p>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <div class="filter-group">
+        <label>Country</label>
+        <select id="f-country" onchange="applyFilters()">
+          <option value="">Both</option>
+          <option value="thailand">Thailand</option>
+          <option value="philippines">Philippines</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Unit type</label>
+        <select id="f-unit" onchange="applyFilters()">
+          <option value="">Any</option>
+          <option value="studio">Studio</option>
+          <option value="1-bed">1 bedroom</option>
+          <option value="2-bed">2 bedroom</option>
+          <option value="3-bed">3 bedroom</option>
+          <option value="penthouse">Penthouse</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Setting</label>
+        <select id="f-setting" onchange="applyFilters()">
+          <option value="">Any</option>
+          <option value="beach">Beach / island</option>
+          <option value="city">City centre</option>
+          <option value="resort">Resort</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Must have</label>
+        <select id="f-amenity" onchange="initSearchFilters()">
+          <option value="">Any</option>
+          <option value="pool">Pool</option>
+          <option value="gym">Gym</option>
+          <option value="beach-access">Beach access</option>
+          <option value="coworking">Co-working space</option>
+          <option value="spa">Spa</option>
+        </select>
+      </div>
+      <button class="clear-btn" onclick="clearFilters()">Clear</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <p class="results-count" id="count">Showing <span id="count-num">4</span> developments</p>
+    <div class="card-grid" id="grid">
+
+      <div class="card" data-country="philippines" data-units="1-bed,2-bed,3-bed" data-setting="city"
+        data-amenities="pool,gym,spa">
+
+        <div class="card-img"><img src="images/Haraya/Building1.png" alt="Shang Haraya - Bridgetowne"></div>
+
+        <div class="card-body">
+          <span class="card-tag tag-ph">Philippines · Pasig</span>
+
+          <h3>Haraya Residences</h3>
+
+          <p>
+            A vertical gated village within Bridgetowne Estate featuring luxury residences, resort-style amenities and
+            exceptional connectivity across Metro Manila.
+          </p>
+
+          <div class="unit-tags">
+            <span class="unit-tag">1 bed,</span>
+            <span class="unit-tag">2 bed,</span>
+            <span class="unit-tag">3 bed</span>
+          </div>
+
+          <p class="card-price">
+            From <strong data-usd="424000">$424k</strong>
+          </p>
+
+          <a href="haraya.html" class="btn btn-gold">View development</a>
+        </div>
+      </div>
+
+
+      <div class="card" data-country="philippines" data-units="studio,1-bed,2-bed,3-bed" data-setting="city"
+        data-amenities="pool,gym,coworking">
+
+        <div class="card-img"> <img src="images/Laya/Building1.png" alt="Laya Pasig City"></div>
+
+        <div class="card-body">
+          <span class="card-tag tag-ph">Philippines · Pasig City</span>
+
+          <h3>Laya by Shang Properties</h3>
+
+          <p>
+            A vibrant residential community designed for professionals, creatives and growing families with over 2,900
+            sqm of lifestyle amenities.
+          </p>
+
+          <div class="unit-tags">
+            <span class="unit-tag">Studio,</span>
+            <span class="unit-tag">1 bed,</span>
+            <span class="unit-tag">2 bed,</span>
+            <span class="unit-tag">3 bed</span>
+          </div>
+
+          <p class="card-price">
+            From <strong data-usd="140000">$140k</strong>
+          </p>
+
+          <a href="Laya-Shang-Pasig.html" class="btn btn-gold">View development</a>
+        </div>
+      </div>
+
+
+      <div class="card" data-country="philippines" data-units="studio,1-bed,2-bed,3-bed" data-setting="city"
+        data-amenities="pool,gym,coworking,spa">
+
+        <div class="card-img">
+
+          <img src="images/ShangSummit/BuildingSmall.png" alt="Shang Summit Quezon City">
+        </div>
+
+        <div class="card-body">
+          <span class="card-tag tag-ph">Philippines · Quezon City</span>
+
+          <h3>Shang Summit Quezon</h3>
+
+          <p>
+            Iconic twin towers rising over 260 metres above Quezon City with world-class wellness, co-working and
+            entertainment facilities.
+          </p>
+
+          <div class="unit-tags">
+            <span class="unit-tag">Studio,</span>
+            <span class="unit-tag">1 bed,</span>
+            <span class="unit-tag">2 bed,</span>
+            <span class="unit-tag">3 bed</span>
+          </div>
+
+          <p class="card-price">
+            From <strong data-usd="166000">$166k</strong>
+          </p>
+
+          <a href="Shang-Summit-Quezon.html" class="btn btn-gold">View development</a>
+        </div>
+      </div>
+      <div class="card" data-country="thailand" data-units="studio,1-bed,2-bed" data-setting="beach,resort"
+        data-amenities="pool,gym">
+
+        <div class="card-img"><img src="images/Blueroc/Building3.png" alt="Bluroc Hua Hin"></div>
+
+        <div class="card-body">
+          <span class="card-tag tag-thailand">Thailand · Hua Hin</span>
+
+          <h3>Bluroc Hua Hin</h3>
+
+          <p>
+            Moroccan-inspired condos in Hua Hin City, close to the beach, with two outdoor pools, a fitness centre and
+            landscaped tropical gardens.
+          </p>
+
+          <div class="unit-tags">
+            <span class="unit-tag">Studio,</span>
+            <span class="unit-tag">1 bed,</span>
+            <span class="unit-tag">2 bed</span>
+          </div>
+
+          <p class="card-price">
+            From <strong data-usd="46550">$46.6k</strong>
+          </p>
+
+          <a href="bluroc-hua-hin.html" class="btn btn-gold">View development</a>
+        </div>
+      </div>
+
+      <div class="card" data-country="philippines" data-units="studio,1-bed,2-bed,3-bed,penthouse"
+        data-setting="city,resort" data-amenities="pool,gym,spa">
+
+        <div class="card-img">
+          <img src="images/Bauhinia/Building1.png" alt="Shang Bauhinia -Cebu">
+        </div>
+
+        <div class="card-body">
+          <span class="card-tag tag-ph">Philippines · Cebu</span>
+
+          <h3>Shang Bauhinia Residences</h3>
+
+          <p>
+            Ultra-luxury residences overlooking Cebu Country Club combining hotel-grade amenities with one of Cebu's
+            most prestigious addresses.
+          </p>
+
+          <div class="unit-tags">
+            <span class="unit-tag">Studio,</span>
+            <span class="unit-tag">1 bed,</span>
+            <span class="unit-tag">2 bed,</span>
+            <span class="unit-tag">3 bed,</span>
+            <span class="unit-tag">Penthouse</span>
+          </div>
+
+          <p class="card-price">
+            From <strong data-usd="190000">$190k</strong>
+          </p>
+
+          <a href="bauhinia.html" class="btn btn-gold">View development</a>
+        </div>
+      </div>
+    </div>
+    <p class="no-results" id="no-results">No developments match your filters. <a href="search.html">Clear all
+        filters</a></p>
+  </div>
+
+  <div class="other-paths">
+    <div class="other-paths-inner">
+      <h3>Try a different approach</h3>
+      <p>Not finding what you're looking for? Try browsing by lifestyle or budget instead.</p>
+      <div class="path-btns">
+        <a href="lifestyle.html" class="btn">Browse by lifestyle</a>
+        <a href="budget.html" class="btn">Browse by budget</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>SeaLux Property</h4>
+        <p>Connecting buyers with exceptional developments across South East Asia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Developments</h4>
+        <!-- ✏️ Add a link for each development page -->
+        <a href="developments.html">All developments</a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="find.html">Find my property</a>
+        <a href="why-sea.html">Why SEA</a>
+        <a href="guides/index.html">Buyer guides</a>
+        <a href="about.html">About us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Countries</h4>
+        <a href="thailand.html">Thailand</a>
+        <a href="philippines.html">Philippines</a>
+        <a href="malaysia.html">Malaysia</a>
+        <a href="Singapore.html">Singapore</a>
+        <a href="vietnam.html">Vietnam</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 SeaLux Property. All developments are off-plan. Prices indicative and subject to change.
+    </div>
+  </footer>
+
+ <!-- Floating contact button -->
+  <button class="float-btn" id="float-btn" aria-label="Contact us">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.5"
+        stroke-linejoin="round" />
+    </svg>
+  </button>
+
+  <!-- Floating contact form -->
+  <!-- Floating contact form -->
+<div class="float-form-wrap" id="float-form-wrap">
+  <div class="float-form">
+    <div class="float-form-header">
+      <h4>Get in touch</h4>
+      <button class="float-form-close" id="float-form-close" aria-label="Close">✕</button>
+    </div>
+    <div class="enquiry-form-block">
+
+              <form class="enquiry-form"> <input type="text" name="website" style="position:absolute; left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Email address">
+        <input type="tel" name="phone" placeholder="Phone / WhatsApp" pattern="[0-9+\s\-()]{7,}">
+
+        <select name="property" class="property-select">
+          <!-- populated automatically by populatePropertySelects() in main.js -->
+        </select>
+
+        <textarea name="message" placeholder="Your message"></textarea>
+
+        <p class="form-error form-error--missing" style="display:none">Please provide either an email address or phone number.</p>
+        <p class="form-error form-error--phone" style="display:none">Please enter a valid phone number.</p>
+
+        <button type="submit" class="btn btn-gold enquiry-submit">Send enquiry</button>
+
+        <p class="form-note">We'll get back to you within 24 hours.</p>
+
+      </form>
+
+      <p class="form-success" style="display:none">Thank you — we'll be in touch shortly.</p>
+
+    </div>
+  </div>
+</div>
+  <script src="main.js"></script>
+</body>
+
+</html>
