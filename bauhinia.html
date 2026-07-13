@@ -12,6 +12,15 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YJYBEPCDZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-5YJYBEPCDZ');
+</script>
 
 <body>
 
@@ -38,17 +47,17 @@
         <a href="about.html">About</a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav><!-- PAGE HERO -->
-<div class="mobile-nav" id="mobile-nav">
-  <a href="developments.html">Developments</a>
-  <a href="find.html">Find my property</a>
-  <a href="why-sea.html">Why SEA</a>
-  <a href="guides.html">Guides</a>
-  <a href="about.html">About</a>
-</div>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="developments.html">Developments</a>
+    <a href="find.html">Find my property</a>
+    <a href="why-sea.html">Why SEA</a>
+    <a href="guides.html">Guides</a>
+    <a href="about.html">About</a>
+  </div>
   <div class="page-hero" id="bauhinia">
     <div class="page-hero-inner">
 
@@ -102,11 +111,11 @@
             attention to detail.
 
           </p>
-<p><a href="images/Bauhinia/Welcome.mp4" target="_blank" style="font-size:14px;color:var(--gold)">
+          <p><a href="images/Bauhinia/Welcome.mp4" target="_blank" style="font-size:14px;color:var(--gold)">
               Welcome video (MP4)→</a></p>
-   <p><a href="images/Bauhinia/Brochure.pdf" target="_blank" style="font-size:14px;color:var(--gold)">
-             Bauhinia Brochure (PDF)→</a></p>
-           
+          <p><a href="images/Bauhinia/Brochure.pdf" target="_blank" style="font-size:14px;color:var(--gold)">
+              Bauhinia Brochure (PDF)→</a></p>
+
           <p><a href="guides/philippines.html" style="font-size:14px;color:var(--gold)">
               Philippines buyer guide →</a></p>
 
@@ -627,42 +636,54 @@
             Enquire about Shang Bauhinia Residences
           </p>
 
-          <form id="agent-contact-form">
+          <div class="agent-form enquiry-form-block">
 
-            <input type="text" name="name" placeholder="Your name" required>
+            <p style="font-weight:500;margin-bottom:16px">
+              Enquire about Aceller hotel investment units
+            </p>
 
-            <input type="email" name="email" placeholder="Email address">
+            <form id="agent-contact-form" class="enquiry-form">
 
-            <input type="tel" name="phone" placeholder="Phone / WhatsApp">
+              <input type="text" name="name" placeholder="Your name" required>
 
-            <p class="form-error"></p>
+              <input type="email" name="email" placeholder="Email address">
 
-            <select name="property">
+              <input type="tel" name="phone" placeholder="Phone / WhatsApp">
 
-              <option value="">I'm interested in...</option>
+              <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
-              <option>Studio</option>
+              <p class="form-error form-error--missing" style="display:none">Please provide an email or phone number.
+              </p>
+              <p class="form-error form-error--phone" style="display:none">Please enter a valid phone number.</p>
 
-              <option>1 Bedroom</option>
+              <select name="property">
+                <option value="">I'm interested in...</option>
+                <option>Studio (Type SA)</option>
+                <option>1 Bedroom (Type A)</option>
+                <option>2 Bedroom (Type C)</option>
+                <option>Not sure yet</option>
+              </select>
 
-              <option>2 Bedroom</option>
-
-              <option>Signature Collection</option>
-
-              <option>Not sure yet</option>
-
-            </select>
-
-            <textarea name="message" placeholder="Any questions or requirements?">
+              <textarea name="message" placeholder="Any questions or requirements?">
 </textarea>
 
-            <button type="submit" class="btn btn-gold" style="width:100%">
+              <button type="submit" class="btn btn-gold enquiry-submit" style="width:100%">
 
-              Send enquiry
+                Send enquiry
 
-            </button>
+              </button>
 
-          </form>
+              <p style="font-size:11px;color:var(--text-light);margin-top:8px;text-align:center">
+
+                Your details are shared only with the agent for this development.
+
+              </p>
+
+              <p class="form-success" style="display:none">Thanks — your enquiry has been sent.</p>
+
+            </form>
+
+          </div>
 
         </div>
 
@@ -1025,7 +1046,7 @@
     </div>
 
   </section>
-   <footer>
+  <footer>
     <div class="footer-inner">
       <div class="footer-col">
         <h4>SeaLux Property</h4>
@@ -1069,64 +1090,34 @@
 
 
   <div class="float-form-wrap" id="float-form-wrap">
-
     <div class="float-form">
-
       <div class="float-form-header">
-
         <h4>Get in touch</h4>
-
-        <button class="float-form-close" id="float-form-close">
-
-          ✕
-
-        </button>
-
+        <button class="float-form-close" id="float-form-close" aria-label="Close">✕</button>
       </div>
-
-      <form id="contact-form">
-
+      <form id="contact-form" class="enquiry-form">
         <input type="text" name="name" placeholder="Your name" required>
-
         <input type="email" name="email" placeholder="Email address">
-
-        <input type="tel" name="phone" placeholder="Phone / WhatsApp">
-
-        <select name="property">
-
-          <option value="">Interested in...</option>
-
-          <option>Studio</option>
-          <option>1 Bedroom</option>
-          <option>2 Bedroom</option>
-          <option>Signature Collection</option>
-
-        </select>
-
-        <textarea name="message" placeholder="Your message">
-</textarea>
-
-        <button type="submit" class="btn btn-gold">
-
-          Send enquiry
-
-        </button>
-
-        <p class="float-form-note">
-
-          We'll get back to you within 24 hours.
-
+        <input type="tel" name="phone" placeholder="Phone / WhatsApp" pattern="[0-9+\s\-()]{7,}">
+        <p class="form-error form-error--missing" id="contact-error" style="display:none">Please provide either an email
+          address or phone number.</p>
+        <p class="form-error form-error--phone" id="phone-error" style="display:none">Please enter a valid phone number.
         </p>
-
+        <select name="property">
+        </select>
+        <textarea name="message" placeholder="Your message"></textarea>
+        <button type="submit" class="btn btn-gold enquiry-submit" id="form-submit">Send enquiry</button>
+        <p class="float-form-note">We'll get back to you within 24 hours.</p>
       </form>
-
+      <p class="float-form-success form-success" id="float-form-success">Thank you — we'll be in touch shortly.</p>
     </div>
-
   </div>
 
   <div id="image-overlay">
     <span class="overlay-close">&times;</span>
-    <img id="overlay-img">
+    <img class="overlay-arrow overlay-arrow-left" src="images/ArrowLeft.png" alt="Previous">
+    <img id="overlay-img" src="" alt="Full view">
+    <img class="overlay-arrow overlay-arrow-right" src="images/ArrowRight.png" alt="Next">
   </div>
   <script>
 

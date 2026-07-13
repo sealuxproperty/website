@@ -25,7 +25,8 @@ const PROPERTY_LIST = [
   "Shang Summit - Quezon",
   "Shang Bauhinia - Cebu",
   "Bluroc - Hua Hin",
-  "Not sure yet"
+  "Soi Ta-iad - Phuket",
+  "Not sure. Please advise."
 ];
 
 function populatePropertySelects() {
@@ -606,117 +607,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-
   // ─────────────────────────────
   // Image overlay
   // ─────────────────────────────
 
-  const overlay =
-    document.getElementById(
-      'image-overlay'
-    );
+  const overlay = document.getElementById('image-overlay');
+  const overlayImg = document.getElementById('overlay-img');
+  const closeBtn = document.querySelector('.overlay-close');
+  const prevBtn = document.querySelector('.overlay-arrow-left');
+  const nextBtn = document.querySelector('.overlay-arrow-right');
 
-  const overlayImg =
-    document.getElementById(
-      'overlay-img'
-    );
+  let galleryImages = [];
+  let galleryIndex = 0;
 
-  const closeBtn =
-    document.querySelector(
-      '.overlay-close'
-    );
-
-
-  document.addEventListener(
-    'click',
-    e => {
-
-      const img =
-        e.target.closest(
-
-          '.amenity-gallery img, .unit-gallery img, .unit-floorplan img'
-
-        );
-
-      if (
-        !img ||
-        !overlay
-      )
-        return;
-
-      overlay.style.display =
-        'flex';
-
-      overlayImg.src =
-        img.src;
-
-      overlayImg.alt =
-        img.alt;
-
-    });
-
-
-  if (
-    closeBtn
-  ) {
-
-    closeBtn.addEventListener(
-      'click',
-      () => {
-
-        overlay.style.display =
-          'none';
-
-      }
-    );
-
+  function showOverlayImage(index) {
+    if (!galleryImages.length) return;
+    galleryIndex = (index + galleryImages.length) % galleryImages.length;
+    overlayImg.src = galleryImages[galleryIndex].src;
+    overlayImg.alt = galleryImages[galleryIndex].alt;
   }
 
+  document.addEventListener('click', e => {
 
-  if (
-    overlay
-  ) {
-
-    overlay.addEventListener(
-      'click',
-      e => {
-
-        if (
-          e.target === overlay
-        ) {
-
-          overlay.style.display =
-            'none';
-
-        }
-
-      }
+    const img = e.target.closest(
+      '.amenity-gallery img, .unit-gallery img, .unit-floorplan img'
     );
 
+    if (!img || !overlay) return;
+
+    const container = img.closest(
+      '.amenity-gallery, .unit-gallery, .unit-floorplan'
+    );
+
+    galleryImages = Array.from(container.querySelectorAll('img'));
+    galleryIndex = galleryImages.indexOf(img);
+
+    overlay.style.display = 'flex';
+    showOverlayImage(galleryIndex);
+
+  });
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      showOverlayImage(galleryIndex - 1);
+    });
   }
 
-
-  document.addEventListener(
-    'keydown',
-    e => {
-
-      if (
-
-        e.key === 'Escape'
-        &&
-        overlay
-        &&
-        overlay.style.display ===
-        'flex'
-
-      ) {
-
-        overlay.style.display =
-          'none';
-
-      }
-
+  if (nextBtn) {
+    nextBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      showOverlayImage(galleryIndex + 1);
     });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      overlay.style.display = 'none';
+    });
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) {
+        overlay.style.display = 'none';
+      }
+    });
+  }
+
+  document.addEventListener('keydown', e => {
+
+    if (!overlay || overlay.style.display !== 'flex') return;
+
+    if (e.key === 'Escape') {
+      overlay.style.display = 'none';
+    } else if (e.key === 'ArrowLeft') {
+      showOverlayImage(galleryIndex - 1);
+    } else if (e.key === 'ArrowRight') {
+      showOverlayImage(galleryIndex + 1);
+    }
+
+  });
 
 
   // ─────────────────────────────
@@ -776,7 +747,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // wrapper, not globally, so multiple instances stay independent.
   // ─────────────────────────────
 
- const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxJEZBdTri9zWdtszwoHg_xgRxObBCllHqdmmoNtkaJ0csIIPc3InNS-FjfyFCWXm6pIg/exec';
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxJEZBdTri9zWdtszwoHg_xgRxObBCllHqdmmoNtkaJ0csIIPc3InNS-FjfyFCWXm6pIg/exec';
 
   function initContactForm(form) {
 

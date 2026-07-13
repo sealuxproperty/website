@@ -15,11 +15,20 @@
   <link rel="stylesheet" href="style.css">
 
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YJYBEPCDZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-5YJYBEPCDZ');
+</script>
 
 <body>
 
 
-<div class="currency-bar">
+  <div class="currency-bar">
     <div class="currency-bar-inner">
       <span>Currency:</span>
       <button class="currency-btn" data-currency="USD">USD</button>
@@ -122,7 +131,41 @@
 
         </div>
       </div>
+      <div class="dev-card" data-country="thailand" data-lifestyle="beach,city,investment,retirement">
 
+        <div class="dev-img"><img src="images/SoiTaiLad/Building1.png" alt="Aceller Hotel & Residence Soi Ta-iad"></div>
+
+        <div class="dev-body">
+
+          <span class="card-tag tag-thailand">Thailand · Phuket</span>
+
+          <h2>Aceller Hotel & Residence</h2>
+
+          <p class="persona-match">
+            Perfect for:
+            <strong>Active Lifestyle Seeker · Yield Investor · Long-Stay Retiree</strong>
+          </p>
+
+          <p>
+            An 8-storey active residence in Soi Ta-iad, Phuket's fitness and long-stay lifestyle district. Featuring
+            a sloped jogging track, half-Olympic pool and standalone clubhouse — with hotel units also available as
+            an investment under a global partnership with TRYP by Wyndham.
+          </p>
+
+          <div class="tags">
+            <span class="tag">🏃 Sloped jogging track</span>
+            <span class="tag">🏊 Half-Olympic pool</span>
+            <span class="tag">📈 Hotel investment units</span>
+            <span class="tag">🌞 Long-stay lifestyle</span>
+          </div>
+
+          <div class="dev-footer">
+            <p class="price">From <strong data-usd="98595">$98.6k</strong></p>
+            <a href="aceller-soitaid-residence.html" class="btn btn-gold">View development</a>
+          </div>
+
+        </div>
+      </div>
       <div class="dev-card" data-country="philippines" data-lifestyle="city,investment,family">
         <div class="dev-img"><img src="images/ShangSummit/Building2.png" alt="Shang-Summit-Quezon"></div>
         <div class="dev-body">
@@ -184,39 +227,40 @@
 
         </div>
       </div>
-<div class="dev-card" data-country="thailand" data-lifestyle="beach,investment,retirement,family">
+      <div class="dev-card" data-country="thailand" data-lifestyle="beach,investment,retirement,family">
 
-  <div class="dev-img"><img src="images/Blueroc/Building2.png" alt="Bluroc Hua Hin"></div>
+        <div class="dev-img"><img src="images/Blueroc/Building2.png" alt="Bluroc Hua Hin"></div>
 
-  <div class="dev-body">
+        <div class="dev-body">
 
-    <span class="card-tag tag-thailand">Thailand · Hua Hin</span>
+          <span class="card-tag tag-thailand">Thailand · Hua Hin</span>
 
-    <h2>Bluroc Hua Hin</h2>
+          <h2>Bluroc Hua Hin</h2>
 
-    <p class="persona-match">
-      Perfect for:
-      <strong>Beach Lifestyle Seeker · Value Investor · Retirement Planner</strong>
-    </p>
+          <p class="persona-match">
+            Perfect for:
+            <strong>Beach Lifestyle Seeker · Value Investor · Retirement Planner</strong>
+          </p>
 
-    <p>
-      Moroccan-inspired condos in the heart of Hua Hin City, minutes from the beach, with two swimming pools, a fitness centre and tropical gardens — an affordable entry point into Thai coastal living.
-    </p>
+          <p>
+            Moroccan-inspired condos in the heart of Hua Hin City, minutes from the beach, with two swimming pools, a
+            fitness centre and tropical gardens — an affordable entry point into Thai coastal living.
+          </p>
 
-    <div class="tags">
-      <span class="tag">🏖️ Near Hua Hin beaches</span>
-      <span class="tag">🏊 Two pools</span>
-      <span class="tag">💪 Fitness centre</span>
-      <span class="tag">👨‍👩‍👧 Family rooms</span>
-    </div>
+          <div class="tags">
+            <span class="tag">🏖️ Near Hua Hin beaches</span>
+            <span class="tag">🏊 Two pools</span>
+            <span class="tag">💪 Fitness centre</span>
+            <span class="tag">👨‍👩‍👧 Family rooms</span>
+          </div>
 
-    <div class="dev-footer">
-      <p class="price">From <strong data-usd="46550">$46.6k</strong></p>
-      <a href="bluroc-hua-hin.html" class="btn btn-gold">View development</a>
-    </div>
+          <div class="dev-footer">
+            <p class="price">From <strong data-usd="46550">$46.6k</strong></p>
+            <a href="bluroc-hua-hin.html" class="btn btn-gold">View development</a>
+          </div>
 
-  </div>
-</div>
+        </div>
+      </div>
 
       <div class="dev-card" data-country="philippines" data-lifestyle="city,investment,family,retirement">
 
@@ -277,7 +321,7 @@
     </div>
   </div>
 
-   <footer>
+  <footer>
     <div class="footer-inner">
       <div class="footer-col">
         <h4>SeaLux Property</h4>
@@ -317,42 +361,44 @@
     </svg>
   </button>
 
-  
- <!-- Floating contact form -->
-<div class="float-form-wrap" id="float-form-wrap">
-  <div class="float-form">
-    <div class="float-form-header">
-      <h4>Get in touch</h4>
-      <button class="float-form-close" id="float-form-close" aria-label="Close">✕</button>
-    </div>
-    <div class="enquiry-form-block">
 
-              <form class="enquiry-form"> <input type="text" name="website" style="position:absolute; left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <!-- Floating contact form -->
+  <div class="float-form-wrap" id="float-form-wrap">
+    <div class="float-form">
+      <div class="float-form-header">
+        <h4>Get in touch</h4>
+        <button class="float-form-close" id="float-form-close" aria-label="Close">✕</button>
+      </div>
+      <div class="enquiry-form-block">
 
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Email address">
-        <input type="tel" name="phone" placeholder="Phone / WhatsApp" pattern="[0-9+\s\-()]{7,}">
+        <form class="enquiry-form"> <input type="text" name="website" style="position:absolute; left:-9999px"
+            tabindex="-1" autocomplete="off" aria-hidden="true">
 
-        <select name="property" class="property-select">
-          <!-- populated automatically by populatePropertySelects() in main.js -->
-        </select>
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Email address">
+          <input type="tel" name="phone" placeholder="Phone / WhatsApp" pattern="[0-9+\s\-()]{7,}">
 
-        <textarea name="message" placeholder="Your message"></textarea>
+          <select name="property" class="property-select">
+            <!-- populated automatically by populatePropertySelects() in main.js -->
+          </select>
 
-        <p class="form-error form-error--missing" style="display:none">Please provide either an email address or phone number.</p>
-        <p class="form-error form-error--phone" style="display:none">Please enter a valid phone number.</p>
+          <textarea name="message" placeholder="Your message"></textarea>
 
-        <button type="submit" class="btn btn-gold enquiry-submit">Send enquiry</button>
+          <p class="form-error form-error--missing" style="display:none">Please provide either an email address or phone
+            number.</p>
+          <p class="form-error form-error--phone" style="display:none">Please enter a valid phone number.</p>
 
-        <p class="form-note">We'll get back to you within 24 hours.</p>
+          <button type="submit" class="btn btn-gold enquiry-submit">Send enquiry</button>
 
-      </form>
+          <p class="form-note">We'll get back to you within 24 hours.</p>
 
-      <p class="form-success" style="display:none">Thank you — we'll be in touch shortly.</p>
+        </form>
 
+        <p class="form-success" style="display:none">Thank you — we'll be in touch shortly.</p>
+
+      </div>
     </div>
   </div>
-</div>
   <script src="main.js"></script>
 </body>
 

@@ -32,7 +32,12 @@ body {
   color: var(--text);
   background: var(--white);
   line-height: 1.7;
+
+  margin: 0 auto;
 }
+
+
+
 
 h1,
 h2,
@@ -95,14 +100,16 @@ p {
   gap: 24px;
   padding: 24px;
 }
+
 @media (max-width: 767px) {
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  padding: 24px;
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    padding: 24px;
+  }
 }
-}
+
 @media (max-width: 767px) {
   .card-grid {
     padding: 4px;
@@ -193,6 +200,7 @@ nav {
 
 .nav-logo span {
   color: var(--gold);
+  margin-right: 8px;
 }
 
 .nav-links {
@@ -404,7 +412,7 @@ h3 {
 
   width: fit-content;
   max-width: 50%;
-  height: 90%;
+
 
 }
 
@@ -1030,15 +1038,10 @@ main {
   line-height: 1.5;
 }
 
-.enquire-btn {
-  display: block;
-  text-align: center;
-  padding: 8px;
-  font-size: 13px;
-  border: 1px solid var(--sand-mid);
-  border-radius: var(--radius);
-  color: var(--text-mid);
-  transition: all .15s;
+.btn.btn-gold.enquire-btn {
+
+  padding: 14px;
+
 }
 
 .enquire-btn:hover {
@@ -1830,7 +1833,7 @@ main {
   display: inline-block;
   max-width: 560px;
   margin-left: 24px;
-  margin-top: 48px;
+
 }
 
 .hero-slide-content .container a {
@@ -2138,6 +2141,15 @@ main {
   margin-bottom: 32px;
 }
 
+.amenity-tabs-hotelmod {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--sand-mid);
+  margin: 32px 0 0 0;
+}
+
 .amenity-tab {
   background: none;
   border: none;
@@ -2325,6 +2337,31 @@ main {
   color: var(--gold);
 }
 
+.overlay-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity .2s;
+  z-index: 10;
+  user-select: none;
+}
+
+.overlay-arrow:hover {
+  opacity: 1;
+}
+
+.overlay-arrow-left {
+  left: 24px;
+}
+
+.overlay-arrow-right {
+  right: 24px;
+}
+
 #shang {
   background-image: url('images/ShangSummit/Building3.png');
   background-size: cover;
@@ -2380,6 +2417,21 @@ main {
   background-position: right center;
   background-repeat: no-repeat;
 }
+
+#Soitaiad1 {
+  background-image: url('images/SoiTaiLad/Building2.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+#Soitaiad2 {
+  background-image: url('images/SoiTaiLad/Building3.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
 
 .agent-avatar {
   width: 120px;
@@ -2474,4 +2526,59 @@ p.note {
   object-fit: contain;
   background: var(--bg-alt);
   border-radius: var(--radius-lg);
+}
+
+.hero-btn-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+@media (max-width: 640px) {
+  .hero-btn-row .btn {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+}
+
+/* Bottom-align content on mobile */
+@media (max-width: 640px) {
+  .hero-slide-content {
+    align-items: flex-end;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-slide-content {
+    align-items: flex-end;
+    align-self: flex-end;
+  }
+}
+
+/* Keep the two buttons on one line */
+@media (max-width: 640px) {
+  .hero-slide-content .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-slide-content .container>*:not(a) {
+    /* headings/eyebrow/p stay stacked as normal block content above */
+  }
+
+  .hero-slide-content .container a.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  .hero-slide-content .container a.btn:first-of-type {
+    margin-right: 0;
+  }
+
+  .hero-slide-content .btn {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
 }

@@ -12,6 +12,15 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YJYBEPCDZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-5YJYBEPCDZ');
+</script>
 
 <body>
 
@@ -641,41 +650,54 @@
             Enquire about Laya by Shang Properties
           </p>
 
-          <form id="agent-contact-form">
+          <div class="agent-form enquiry-form-block">
 
-            <input type="text" name="name" placeholder="Your name" required>
-
-            <input type="email" name="email" placeholder="Email address">
-
-            <input type="tel" name="phone" placeholder="Phone / WhatsApp">
-
-            <p class="form-error"></p>
-
-            <select name="property">
-              <option value="">I'm interested in...</option>
-              <option>Studio</option>
-              <option>1 Bedroom</option>
-              <option>2 Bedroom</option>
-              <option>3 Bedroom</option>
-              <option>Not sure yet</option>
-            </select>
-
-            <textarea name="message" placeholder="Any questions or requirements?">
-</textarea>
-
-            <button type="submit" class="btn btn-gold" style="width:100%">
-
-              Send enquiry
-
-            </button>
-
-            <p style="font-size:11px;color:var(--text-light);margin-top:8px;text-align:center">
-
-              Your details are shared only with the agent for this development.
-
+            <p style="font-weight:500;margin-bottom:16px">
+              Enquire about Aceller hotel investment units
             </p>
 
-          </form>
+            <form id="agent-contact-form" class="enquiry-form">
+
+              <input type="text" name="name" placeholder="Your name" required>
+
+              <input type="email" name="email" placeholder="Email address">
+
+              <input type="tel" name="phone" placeholder="Phone / WhatsApp">
+
+              <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+              <p class="form-error form-error--missing" style="display:none">Please provide an email or phone number.
+              </p>
+              <p class="form-error form-error--phone" style="display:none">Please enter a valid phone number.</p>
+
+              <select name="property">
+                <option value="">I'm interested in...</option>
+                <option>Studio (Type SA)</option>
+                <option>1 Bedroom (Type A)</option>
+                <option>2 Bedroom (Type C)</option>
+                <option>Not sure yet</option>
+              </select>
+
+              <textarea name="message" placeholder="Any questions or requirements?">
+</textarea>
+
+              <button type="submit" class="btn btn-gold enquiry-submit" style="width:100%">
+
+                Send enquiry
+
+              </button>
+
+              <p style="font-size:11px;color:var(--text-light);margin-top:8px;text-align:center">
+
+                Your details are shared only with the agent for this development.
+
+              </p>
+
+              <p class="form-success" style="display:none">Thanks — your enquiry has been sent.</p>
+
+            </form>
+
+          </div>
 
         </div>
 
@@ -800,7 +822,9 @@
 
   <div id="image-overlay">
     <span class="overlay-close">&times;</span>
-    <img id="overlay-img" src="" alt="">
+    <img class="overlay-arrow overlay-arrow-left" src="images/ArrowLeft.png" alt="Previous">
+    <img id="overlay-img" src="" alt="Full view">
+    <img class="overlay-arrow overlay-arrow-right" src="images/ArrowRight.png" alt="Next">
   </div>
 
 

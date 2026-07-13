@@ -12,6 +12,15 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YJYBEPCDZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-5YJYBEPCDZ');
+</script>
 
 <body>
 
@@ -633,41 +642,54 @@
             Enquire about Bluroc Hua Hin
           </p>
 
-          <form id="agent-contact-form">
+          <div class="agent-form enquiry-form-block">
 
-            <input type="text" name="name" placeholder="Your name" required>
-
-            <input type="email" name="email" placeholder="Email address">
-
-            <input type="tel" name="phone" placeholder="Phone / WhatsApp">
-
-            <p class="form-error"></p>
-
-            <select name="property">
-              <option value="">I'm interested in...</option>
-              <option>Studio</option>
-              <option>1 Bedroom</option>
-              <option>1 Bedroom (Larger)</option>
-              <option>2 Bedroom</option>
-              <option>Not sure yet</option>
-            </select>
-
-            <textarea id="property-message" name="message" placeholder="Any questions or requirements?">
-</textarea>
-
-            <button type="submit" class="btn btn-gold" style="width:100%">
-
-              Send enquiry
-
-            </button>
-
-            <p style="font-size:11px;color:var(--text-light);margin-top:8px;text-align:center">
-
-              Your details are shared only with the sales team for this development.
-
+            <p style="font-weight:500;margin-bottom:16px">
+              Enquire about Aceller hotel investment units
             </p>
 
-          </form>
+            <form id="agent-contact-form" class="enquiry-form">
+
+              <input type="text" name="name" placeholder="Your name" required>
+
+              <input type="email" name="email" placeholder="Email address">
+
+              <input type="tel" name="phone" placeholder="Phone / WhatsApp">
+
+              <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+              <p class="form-error form-error--missing" style="display:none">Please provide an email or phone number.
+              </p>
+              <p class="form-error form-error--phone" style="display:none">Please enter a valid phone number.</p>
+
+              <select name="property">
+                <option value="">I'm interested in...</option>
+                <option>Studio (Type SA)</option>
+                <option>1 Bedroom (Type A)</option>
+                <option>2 Bedroom (Type C)</option>
+                <option>Not sure yet</option>
+              </select>
+
+              <textarea name="message" placeholder="Any questions or requirements?">
+</textarea>
+
+              <button type="submit" class="btn btn-gold enquiry-submit" style="width:100%">
+
+                Send enquiry
+
+              </button>
+
+              <p style="font-size:11px;color:var(--text-light);margin-top:8px;text-align:center">
+
+                Your details are shared only with the agent for this development.
+
+              </p>
+
+              <p class="form-success" style="display:none">Thanks — your enquiry has been sent.</p>
+
+            </form>
+
+          </div>
 
         </div>
 
@@ -730,65 +752,34 @@
 
 
   <div class="float-form-wrap" id="float-form-wrap">
-
     <div class="float-form">
-
       <div class="float-form-header">
-
         <h4>Get in touch</h4>
-
-        <button class="float-form-close" id="float-form-close">
-
-          ✕
-
-        </button>
-
+        <button class="float-form-close" id="float-form-close" aria-label="Close">✕</button>
       </div>
-
-      <form id="contact-form">
-
+      <form id="contact-form" class="enquiry-form">
         <input type="text" name="name" placeholder="Your name" required>
-
         <input type="email" name="email" placeholder="Email address">
-
-        <input type="tel" name="phone" placeholder="Phone / WhatsApp">
-
+        <input type="tel" name="phone" placeholder="Phone / WhatsApp" pattern="[0-9+\s\-()]{7,}">
+        <p class="form-error form-error--missing" id="contact-error" style="display:none">Please provide either an email
+          address or phone number.</p>
+        <p class="form-error form-error--phone" id="phone-error" style="display:none">Please enter a valid phone number.
+        </p>
         <select name="property">
-
-          <option value="">Interested in...</option>
-
-          <option>Bluroc Hua Hin</option>
-
-          <option>Studio</option>
-
-          <option>1 Bedroom</option>
-
-          <option>1 Bedroom (Larger)</option>
-
-          <option>2 Bedroom</option>
-
         </select>
-
-        <textarea name="message" placeholder="Your message">
-</textarea>
-
-        <button type="submit" class="btn btn-gold">
-
-          Send enquiry
-
-        </button>
-
-
-
+        <textarea name="message" placeholder="Your message"></textarea>
+        <button type="submit" class="btn btn-gold enquiry-submit" id="form-submit">Send enquiry</button>
+        <p class="float-form-note">We'll get back to you within 24 hours.</p>
       </form>
-
+      <p class="float-form-success form-success" id="float-form-success">Thank you — we'll be in touch shortly.</p>
     </div>
-
   </div>
 
   <div id="image-overlay">
     <span class="overlay-close">&times;</span>
-    <img id="overlay-img" src="" alt="">
+    <img class="overlay-arrow overlay-arrow-left" src="images/ArrowLeft.png" alt="Previous">
+    <img id="overlay-img" src="" alt="Full view">
+    <img class="overlay-arrow overlay-arrow-right" src="images/ArrowRight.png" alt="Next">
   </div>
 
 
@@ -846,8 +837,8 @@
         size: '89 sqm',
         info: 'Generous two-bedroom homes suited to families or shared ownership.',
         price: '189000',
-       floorplan: 'images/Blueroc/2BedLayout.png', 
-      
+        floorplan: 'images/Blueroc/2BedLayout.png',
+
         gallery: [
           'https://blurochuahin.com/wp-content/uploads/2026/06/Bluroc-Hua-Hin-2bedroom-For-Sale-13.jpg',
           'https://blurochuahin.com/wp-content/uploads/2026/06/Bluroc-Hua-Hin-2bedroom-For-Sale-26.jpg',

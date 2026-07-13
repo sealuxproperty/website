@@ -13,6 +13,15 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YJYBEPCDZ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-5YJYBEPCDZ');
+</script>
 
 <body>
 
@@ -41,18 +50,18 @@
                 <a href="guides.html">Guides</a>
                 <a href="about.html">About</a>
             </div>
-<button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
-<div class="mobile-nav" id="mobile-nav">
-  <a href="developments.html">Developments</a>
-  <a href="find.html">Find my property</a>
-  <a href="why-sea.html">Why SEA</a>
-  <a href="guides.html">Guides</a>
-  <a href="about.html">About</a>
-</div>
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="developments.html">Developments</a>
+        <a href="find.html">Find my property</a>
+        <a href="why-sea.html">Why SEA</a>
+        <a href="guides.html">Guides</a>
+        <a href="about.html">About</a>
+    </div>
 
     <!-- HERO -->
 
@@ -111,13 +120,13 @@
 
                     </p>
 
-               
-   <p><a href="images/Haraya/Brochure.pdf" target="_blank" style="font-size:14px;color:var(--gold)">
-             Haraya Residences Brochure (PDF)→</a></p>
-           <p><a href="images/Haraya/Brochure.pdf" target="_blank" style="font-size:14px;color:var(--gold)">
-             Haraya Residences Technical Brochure (PDF)→</a></p>
-          <p><a href="guides/philippines.html" style="font-size:14px;color:var(--gold)">
-              Philippines buyer guide →</a></p>
+
+                    <p><a href="images/Haraya/Brochure.pdf" target="_blank" style="font-size:14px;color:var(--gold)">
+                            Haraya Residences Brochure (PDF)→</a></p>
+                    <p><a href="images/Haraya/Brochure.pdf" target="_blank" style="font-size:14px;color:var(--gold)">
+                            Haraya Residences Technical Brochure (PDF)→</a></p>
+                    <p><a href="guides/philippines.html" style="font-size:14px;color:var(--gold)">
+                            Philippines buyer guide →</a></p>
 
                 </div>
 
@@ -799,37 +808,37 @@
 
     </section>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-col">
-        <h4>SeaLux Property</h4>
-        <p>Connecting buyers with exceptional developments across South East Asia.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Developments</h4>
-        <!-- ✏️ Add a link for each development page -->
-        <a href="developments.html">All developments</a>
-      </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <a href="find.html">Find my property</a>
-        <a href="why-sea.html">Why SEA</a>
-        <a href="guides/index.html">Buyer guides</a>
-        <a href="about.html">About us</a>
-      </div>
-      <div class="footer-col">
-        <h4>Countries</h4>
-        <a href="thailand.html">Thailand</a>
-        <a href="philippines.html">Philippines</a>
-        <a href="malaysia.html">Malaysia</a>
-        <a href="Singapore.html">Singapore</a>
-        <a href="vietnam.html">Vietnam</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2025 SeaLux Property. All developments are off-plan. Prices indicative and subject to change.
-    </div>
-  </footer>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>SeaLux Property</h4>
+                <p>Connecting buyers with exceptional developments across South East Asia.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Developments</h4>
+                <!-- ✏️ Add a link for each development page -->
+                <a href="developments.html">All developments</a>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <a href="find.html">Find my property</a>
+                <a href="why-sea.html">Why SEA</a>
+                <a href="guides/index.html">Buyer guides</a>
+                <a href="about.html">About us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Countries</h4>
+                <a href="thailand.html">Thailand</a>
+                <a href="philippines.html">Philippines</a>
+                <a href="malaysia.html">Malaysia</a>
+                <a href="Singapore.html">Singapore</a>
+                <a href="vietnam.html">Vietnam</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 SeaLux Property. All developments are off-plan. Prices indicative and subject to change.
+        </div>
+    </footer>
 
     <button class="float-btn" id="float-btn">
         <svg viewBox="0 0 24 24" fill="none">
@@ -838,52 +847,59 @@
         </svg>
     </button>
 
-    <div class="float-form-wrap" id="float-form-wrap">
+    <div class="agent-form enquiry-form-block">
 
-        <div class="float-form">
+        <p style="font-weight:500;margin-bottom:16px">
+            Enquire about Aceller hotel investment units
+        </p>
 
-            <div class="float-form-header">
+        <form id="agent-contact-form" class="enquiry-form">
 
-                <h4>Get in touch</h4>
+            <input type="text" name="name" placeholder="Your name" required>
 
-                <button class="float-form-close" id="float-form-close">
-                    ✕
-                </button>
+            <input type="email" name="email" placeholder="Email address">
 
-            </div>
+            <input type="tel" name="phone" placeholder="Phone / WhatsApp">
 
-            <form id="contact-form">
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
-                <input type="text" name="name" placeholder="Your name" required>
-                <input type="email" name="email" placeholder="Email address">
-                <input type="tel" name="phone" placeholder="Phone / WhatsApp">
+            <p class="form-error form-error--missing" style="display:none">Please provide an email or phone number.</p>
+            <p class="form-error form-error--phone" style="display:none">Please enter a valid phone number.</p>
 
-                <select name="property">
-                    <option value="">Interested in...</option>
-                    <option>1 Bedroom</option>
-                    <option>2 Bedroom</option>
-                    <option>3 Bedroom</option>
-                </select>
+            <select name="property">
+                <option value="">I'm interested in...</option>
+                <option>Studio (Type SA)</option>
+                <option>1 Bedroom (Type A)</option>
+                <option>2 Bedroom (Type C)</option>
+                <option>Not sure yet</option>
+            </select>
 
-                <textarea name="message" placeholder="Your message"></textarea>
+            <textarea name="message" placeholder="Any questions or requirements?">
+</textarea>
 
-                <button type="submit" class="btn btn-gold">
-                    Send enquiry
-                </button>
+            <button type="submit" class="btn btn-gold enquiry-submit" style="width:100%">
 
-                <p class="float-form-note">
-                    We'll get back to you within 24 hours.
-                </p>
+                Send enquiry
 
-            </form>
+            </button>
 
-        </div>
+            <p style="font-size:11px;color:var(--text-light);margin-top:8px;text-align:center">
+
+                Your details are shared only with the agent for this development.
+
+            </p>
+
+            <p class="form-success" style="display:none">Thanks — your enquiry has been sent.</p>
+
+        </form>
 
     </div>
 
     <div id="image-overlay">
         <span class="overlay-close">&times;</span>
-        <img id="overlay-img">
+        <img class="overlay-arrow overlay-arrow-left" src="images/ArrowLeft.png" alt="Previous">
+        <img id="overlay-img" src="" alt="Full view">
+        <img class="overlay-arrow overlay-arrow-right" src="images/ArrowRight.png" alt="Next">
     </div>
 
     <script>
