@@ -61,6 +61,15 @@ p {
   margin-bottom: 16px;
 }
 
+.quiz-wrap p {
+  margin-top: 24px;
+
+}
+
+.quiz-wrap p a {
+
+  color: var(--gold);
+}
 
 /* Layout */
 .container {
@@ -70,7 +79,7 @@ p {
 }
 
 .section {
-  padding: 64px 0;
+  padding: 24px 0;
 }
 
 .section--sand {
@@ -80,6 +89,11 @@ p {
 .section--navy {
   background: var(--navy);
   color: var(--white);
+}
+
+.section--white {
+  background: var(--white);
+  color: var(--text-dark);
 }
 
 .two-col {
@@ -99,6 +113,14 @@ p {
   grid-template-columns: repeat(2, minmax(260px, 1fr));
   gap: 24px;
   padding: 24px;
+}
+
+.card-grid--single {
+  grid-template-columns: 1fr;
+}
+
+.guides-two-col {
+  align-items: start;
 }
 
 @media (max-width: 767px) {
@@ -192,7 +214,7 @@ nav {
   display: inline-flex;
   align-items: center;
   padding-right: 36px;
-  background-image: url('images/home.png');
+  background-image: url('images/home_result.webp');
   background-repeat: no-repeat;
   background-position: right center;
   background-size: 28px auto;
@@ -598,7 +620,7 @@ h3 {
 /* Filters */
 .filter-bar {
   background: var(--white);
-  padding: 24px 16px;
+  padding: 24px 16px 24px 16px;
   border-bottom: 1px solid var(--sand-mid);
 }
 
@@ -696,15 +718,15 @@ h3 {
 }
 
 .quiz-option:nth-child(1) {
-  background: linear-gradient(rgba(13, 27, 42, 0.55), rgba(13, 27, 42, 0.55)), url('images/quiz-1.png') center/cover no-repeat;
+  background: linear-gradient(rgba(13, 27, 42, 0.55), rgba(13, 27, 42, 0.55)), url('images/quiz-1_result.webp') center/cover no-repeat;
 }
 
 .quiz-option:nth-child(2) {
-  background: linear-gradient(rgba(13, 27, 42, 0.55), rgba(13, 27, 42, 0.55)), url('images/quiz-2.png') center/cover no-repeat;
+  background: linear-gradient(rgba(13, 27, 42, 0.55), rgba(13, 27, 42, 0.55)), url('images/quiz-2_result.webp') center/cover no-repeat;
 }
 
 .quiz-option:nth-child(3) {
-  background: linear-gradient(rgba(13, 27, 42, 0.55), rgba(13, 27, 42, 0.55)), url('images/quiz-3.png') center/cover no-repeat;
+  background: linear-gradient(rgba(13, 27, 42, 0.55), rgba(13, 27, 42, 0.55)), url('images/quiz-3_result.webp') center/cover no-repeat;
 }
 
 /* Footer */
@@ -713,6 +735,7 @@ footer {
   color: rgba(255, 255, 255, .5);
   padding: 40px 20px 20px;
   font-size: 13px;
+
 }
 
 .footer-inner {
@@ -962,7 +985,8 @@ footer {
 main {
   margin: 0 auto;
   padding: 56px 20px 80px;
-  background: var(--sand);
+  padding: 0 0 0 0;
+
 }
 
 /* Budget page */
@@ -1391,9 +1415,10 @@ main {
 }
 
 .country-card {
-  background: var(--sand);
+  background: var(--white);
   border-radius: var(--radius-lg);
   padding: 32px;
+  border: 1px solid var(--sand-mid);
 }
 
 .country-card h3 {
@@ -1415,7 +1440,7 @@ main {
 }
 
 .country-list li::before {
-  content: '→';
+  content: '>';
   color: var(--gold);
   flex-shrink: 0;
 }
@@ -1541,6 +1566,58 @@ main {
   margin-bottom: 16px;
 }
 
+/* Guide category tabs — styled to match .unit-card's active state */
+.guide-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.guide-tab {
+  flex: 1 1 0;
+  text-align: center;
+  border: 1px solid var(--sand-mid);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  background: var(--white);
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.guide-tab h2 {
+  margin: 0 0 6px;
+
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+.guide-tab p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-mid);
+  transition: color 0.2s;
+}
+
+.guide-tab.active {
+  border-color: var(--gold);
+  background: var(--gold);
+}
+
+.guide-tab.active h2,
+.guide-tab.active p {
+  color: var(--white);
+}
+
+.guide-tab-panel {
+  display: none;
+}
+
+.guide-tab-panel.active {
+  display: block;
+}
+
+
 .guide-link {
   font-size: 13px;
   color: var(--gold);
@@ -1592,8 +1669,13 @@ main {
   line-height: 1.6;
 }
 
+.guide-list li strong {
+  display: block;
+}
+
+
 .guide-list li::before {
-  content: '→';
+  content: '>';
   color: var(--gold);
   flex-shrink: 0;
   margin-top: 2px;
@@ -1891,6 +1973,7 @@ main {
   border-radius: var(--radius-lg);
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
   overflow: hidden;
+  border: 1px solid var(--gold);
 }
 
 .float-form-header {
@@ -1925,6 +2008,8 @@ main {
   display: grid;
   gap: 10px;
 }
+
+
 
 .float-form input,
 .float-form select,
@@ -2197,7 +2282,7 @@ main {
 /* Clickable unit cards + detail panel */
 .unit-card[data-unit] {
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 1px solid;
   transition: border-color 0.2s;
 }
 
@@ -2363,70 +2448,86 @@ main {
 }
 
 #shang {
-  background-image: url('images/ShangSummit/Building3.png');
+  background-image: url('images/ShangSummit/building3_result.webp');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
 }
 
 #laya {
-  background-image: url('images/Laya/Building4.png');
+  background-image: url('images/Laya/building4_result.webp');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
 }
 
 #lifeStyle {
-  background-image: url('images/general20.png');
+  background-image: url('images/general9_result.webp');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
 }
 
 #search {
-  background-image: url('images/general22.png');
+  background-image: url('images/general10_result.webp');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
 }
 
 #budget {
-  background-image: url('images/general17.png');
+  background-image: url('images/general11_result.webp');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
 }
 
+#guides1 {
+  background-image: url('images/general12_result.webp');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+#guides2 {
+  background-image: url('images/general13_result.webp');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+
 #bauhinia {
-  background-image: url('images/Bauhinia/Building5.png');
+  background-image: url('images/Bauhinia/building5_result.webp');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
 }
 
 #blueroc {
-  background-image: url('images/Blueroc/Building4.png');
+  background-image: url('images/Blueroc/building4_result.webp');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
 }
 
 #haraya {
-  background-image: url('images/Haraya/Building3.png');
+  background-image: url('images/Haraya/building3_result.webp');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
 }
 
+
 #Soitaiad1 {
-  background-image: url('images/SoiTaiLad/Building2.png');
+  background-image: url('images/SoiTaiLad/building2_result.webp');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
 }
 
 #Soitaiad2 {
-  background-image: url('images/SoiTaiLad/Building3.png');
+  background-image: url('images/SoiTaiLad/building3_result.webp');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;

@@ -747,8 +747,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // wrapper, not globally, so multiple instances stay independent.
   // ─────────────────────────────
 
-  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxJEZBdTri9zWdtszwoHg_xgRxObBCllHqdmmoNtkaJ0csIIPc3InNS-FjfyFCWXm6pIg/exec';
-
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbySbqfEahAetzK81JIicP7pfYXzQE63KmDoaTa9ku_6MFAQHHAhV25fXU_6FjFol3tL2A/exec';
   function initContactForm(form) {
 
     if (!form) return;
@@ -801,7 +800,8 @@ document.addEventListener('DOMContentLoaded', () => {
         email: email,
         phone: phone,
         property: form.property.value,
-        message: form.message.value
+        message: form.message.value,
+        page: window.location.href
       };
 
       fetch(SHEET_URL, {
@@ -1047,3 +1047,12 @@ function initSearchFilters() {
 }
 
 document.addEventListener('DOMContentLoaded', initSearchFilters);
+
+document.querySelectorAll('.guide-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.guide-tab-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+  });
+});
