@@ -747,7 +747,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // wrapper, not globally, so multiple instances stay independent.
   // ─────────────────────────────
 
-  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbySbqfEahAetzK81JIicP7pfYXzQE63KmDoaTa9ku_6MFAQHHAhV25fXU_6FjFol3tL2A/exec';
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxamfrgNDHMwbaDXD8XALR7zeszqWGP716dTCzO_CPtlbc7hlaTNJ9bRdJ4sODuQnyniw/exec';
   function initContactForm(form) {
 
     if (!form) return;
